@@ -9,10 +9,10 @@
                 {"opintopisteet":"5"}
                 ],
     
-    "sisalto":[{"0":"low-code"},
-            {"1":"sisällönhallintajärjestelmä"},
-            {"2":"responsiivinen käyttöliittymä ja komponentit"},
-            {"3":"tiedon haku julkisista palveluista rest-rajapinnan yli"}
+    "sisalto":["numero:"{"0":"low-code"},
+            "numero1:"{"1":"sisällönhallintajärjestelmä"},
+            "numero2:"{"2":"responsiivinen käyttöliittymä ja komponentit"},
+            "numero3:"{"3":"tiedon haku julkisista palveluista rest-rajapinnan yli"}
             ],
 
 
