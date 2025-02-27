@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON sivu2</title>
+</head>
+<body>
+    
+<div class="topnav">
+    <a href="#home">Sivu1</a>
+    <a class="active" href="#sivu2">Sivu2</a>
+</div>
+
+<h1>Miron JSON testi sivu 2</h1>
+
+<div id="vastaus"></div>
+ 
+<script>
+
+    function kerro(data){
+
+        var teksti = "";
+        
+        teksti =  "Toteutuksen nimi - " + data.toteutus + "<br>" 
+        + "Osallistujien lukumäärä - " + data.osallistujat + "<br>" 
+        + "Osallistujien nimet - " + data.nimet + "<br>" 
+        + "Toteutuksen kesto - " + data.kesto;
+        
+        
+        document.getElementById("vastaus").innerHTML = teksti;
+        
+        }
+        
+        
+        fetch('https://raw.githubusercontent.com/MiroHel96/JSON/refs/heads/main/haagaHelia.json') 
+
+
+// Muunnetaan vastaus JSON muotoon  
+
+.then(function (response) {
+
+ return response.json();
+
+})
+
+
+//Käsitellään muunnettu (eli JSON muotoinen) vastaus
+
+// Kutsutaan funktiota kerro()ja välitetään sille json-vastaus
+
+
+
+
+
+
+.then(function (responseJson) {
+
+kerro(responseJson);
+
+ })
+
+
+ // Jos tuli jokin virhe
+
+
+ .catch(function (error) {
+
+ document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+
+})
+
+
+
+    
+</script>
+
+</body>
+</html>
