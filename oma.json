@@ -4,14 +4,15 @@
     "kuvaus":"Tällä sivustolle haetaan JSON-muotoista dataa",
     "kuva":"https://jaakkola.github.io/json/digi.JPG",
 
-    "opintojakso":[{"nimi":"Digitekniikka"},
-                {"tunnus":"DIG4TA021"},
-                {"opintopisteet":"5"}
+    "opintojakso":[{"nimi":"Digitekniikka",
+                "tunnus":"DIG4TA021",
+                "opintopisteet":"5"}
                 ],
 
-    "sisalto":["low-code", "sisällönhallintajärjestelmä", 
-                "responsiivinen käyttöliittymä ja komponentit", 
-                "tiedon haku julkisista palveluista rest-rajapinann yli"],
+    "sisalto":[{"0":"low-code", 
+                "1":"sisällönhallintajärjestelmä", 
+                "2":"responsiivinen käyttöliittymä ja komponentit", 
+                "3":"tiedon haku julkisista palveluista rest-rajapinann yli"}],
 
     "tekniikat":[{"tyyppi":"0", "aihe":"low-code", "linkki":"https://www.weebly.com/"},
                 {"tyyppi":"1", "aihe":"wordpress", "linkki":"https://wordpress.com/"},
