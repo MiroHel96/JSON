@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JSON Git Testi</title>
+</head>
+
+<body>
+
+<div class="topnav">
+    <a class="active" href="#home">Sivu1</a>
+    <a href="#sivu2">Sivu2</a>
+</div>
+
+<h1>Miro JSON testi sivu</h1>
+
+<div id="vastaus"></div>
+
+    
+<script>
+
+
+function kerro(data){
+
+var teksti = "";
+
+teksti = "<h1>" + data.otsikko + "</h1>" + "<br> " + "<h2>" + data.kuvaus + "</h2>" + "<br>"  + data.kuva + "<br>";
+
+var  teksti2 = "";
+
+teksti2 = "Opintojakso: " + data.opintojakso[0].nimi + "<br>" 
++ "Tunnus: " + data.opintojakso[1].tunnus + "<br>" 
++ "Opintopisteet: " + data.opintojakso[2].opintopisteet + "<br>";
+
+var teksti3 = "";
+
+teksti3 = data.sisalto;
+
+
+var teksti4 = "";
+
+teksti4 = "<p>" + data.tekniikat[0].tyyppi + "<br>"  + "Aihe: " + data.tekniikat[0].aihe + "<br>" + "Linkki: " + data.tekniikat[0].linkki + "<br>" +
+data.tekniikat[1].tyyppi + "<br>" + "Aihe: " + data.tekniikat[1].aihe + "<br>" + "Linkki: " + data.tekniikat[1].linkki + "<br>" +
+data.tekniikat[2].tyyppi + "<br>" +  "Aihe: " + data.tekniikat[2].aihe + "<br>" + "Linkki: " + data.tekniikat[2].linkki + "<br>" +
+data.tekniikat[3].tyyppi + "<br>" + "Aihe: " + data.tekniikat[3].aihe + "<br>" + "Linkki: " + data.tekniikat[3].linkki + "<br>" + "</p>";
+
+ 
+
+
+document.getElementById("vastaus").innerHTML = teksti + teksti2  + teksti3 + teksti4;
+
+}
+
+
+fetch('https://raw.githubusercontent.com/MiroHel96/JSON/refs/heads/main/oma.json')
+
+
+// Muunnetaan vastaus JSON muotoon  
+
+.then(function (response) {
+
+return response.json();
+
+})
+
+
+//Käsitellään muunnettu (eli JSON muotoinen) vastaus
+
+// Kutsutaan funktiota kerro()ja välitetään sille json-vastaus
+
+
+
+.then(function (responseJson) {
+
+kerro(responseJson);
+
+})
+
+
+ // Jos tuli jokin virhe
+
+
+ .catch(function (error) {
+
+    document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+
+
+})
+
+
+</script>
+
+
+</body>
+</html>
